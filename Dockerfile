@@ -7,8 +7,8 @@ USER node
 
 WORKDIR /home/node
 
-RUN mkdir -p "~/.npm-global/lib" && \
-    npm config set prefix "~/.npm-global" && \
+RUN mkdir -p "$HOME/.npm-global/lib" && \
+    npm config set prefix "$HOME/.npm-global" && \
     npm install -g "joplin@${JOPLIN_VERSION}"
 
 CMD [ ".npm-global/bin/joplin" ]
